@@ -1,41 +1,25 @@
 package com.ALbersoft.Myzoo.Animales.Aves;
-import java.util.ArrayList;
 
-import com.ALbersoft.Myzoo.Animales.animal;
+import com.ALbersoft.Myzoo.Animales.Animal;
 
-public class Ave extends animal{
-    ArrayList<String> color = new ArrayList<String>();
-    String[] colortipoala = {"Rojo", "Verde" , "Negro", "Blanco", "Amarillo", "Naranja", "Marrón"};
+public class Ave extends Animal {
 
-    public Ave(String nombre, int edad){
-       super(nombre, edad);
+    private String ColorPlumas;
+    private String TipoAve;
+    private int MaxVuelo;
+    private String TipoPata;
+
+    public Ave(String nombre, int edad, String sexo, String ColorPlumas, String TipoAve, int MaxVuelo, String TipoPata) {
+        super(nombre, edad, sexo);
+        this.ColorPlumas = ColorPlumas;
+        this.TipoAve = TipoAve;
+        this.MaxVuelo =MaxVuelo;
+        this.TipoPata = TipoPata;
     }
 
-    public static double MaxVuelo(){
-        double altura = Math.random() * (10000 -1) + 1;
-        altura = Math.round((altura * 1.0)/1.0);
-        return altura;
+    public String muestra() {
+        return " Nombre = " + nombre + ", edad = " + edad + ", Sexo " +  sexo + ", Color de Pluma: " + ColorPlumas + ", Tipo de ave: " + TipoAve +  ", Máxima altura de vuelo: " + MaxVuelo + " Tipo de Pata : " + TipoPata;
     }
-
-    public String ColorPluma(){
-
-        for(int i = 0; i > colortipoala.length; i++){
-            color.add(colortipoala[i]);
-        }
-        double ramdomco = Math.random() * (color.size());
-        String colorave = color.get((int) ramdomco);
-        return colorave;
-    }
-
-    public enum TipoPata {rabo, pija};
-
-    public String Mostrar(){
-        return "El ave " + this.nombre + " tiene " + this.edad +
-                " edad. Tiene de color de plumas: " + ColorPluma() +
-                " De máximo de vuelo: " + MaxVuelo() +
-                " Y de tipo de pata "  ;
-    }
-    // enum tipo pata en mostrar
 
 
 

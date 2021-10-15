@@ -1,35 +1,29 @@
 package com.ALbersoft.Myzoo.Animales.Mamiferos;
 
-import com.ALbersoft.Myzoo.Animales.animal;
+import com.ALbersoft.Myzoo.Animales.Animal;
 
-public class Mamifero extends animal {
+import java.util.ArrayList;
 
-    public Mamifero(String nombre, int edad){
-        super(nombre, edad);
+public class Mamifero extends Animal {
+
+
+    private int Peso;
+    private String Dieta;
+    private String Habito;
+    private  int VelocidadDesplazamiento;
+
+    public Mamifero(String nombre, int edad, String sexo, int Peso, String Dieta, String Habito, int VelocidadDesplazamiento) {
+        super(nombre, edad, sexo);
+        this.Peso = Peso;
+        this.Dieta = Dieta;
+        this.Habito = Habito;
+        this.VelocidadDesplazamiento = VelocidadDesplazamiento;
+
     }
-    public double Peso(){
-        double peso = Math.random() * (100 -1) + 1;
-        peso = Math.round((peso * 100.0)/100.0);
-        return peso;
+
+    public String muestra() {
+        return " Nombre = " + nombre + ", edad = " + edad + ", Sexo " +  sexo + ", Peso: " + Peso + ", Dieta " + Dieta + ", Habito " +  Habito + ", Velocidad de Desplazamiento " + VelocidadDesplazamiento + " Km/h";
     }
-
-    public double Velocidad(){
-        double velocidad = Math.random() * (20 -1) + 1;
-        velocidad = Math.round((velocidad * 100.0)/100.0);
-        return velocidad;
-    }
-
-    public enum Dieta {herbivoro, carnivoro, omnivoro}
-    public enum Habito{nocturno, diurno}
-
-    public String Mostrar(){
-        return "El Mamifero " + this.nombre + " tiene " +
-                this.edad + " Pesa: " + Peso() +
-                " Con una velocidad de: " + Velocidad()
-                ;
-    }
-    // falta los enum ......
-
 
 
 
