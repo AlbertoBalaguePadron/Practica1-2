@@ -2,8 +2,6 @@ package com.ALbersoft.Myzoo.Animales.Mamiferos;
 
 import com.ALbersoft.Myzoo.Animales.Animal;
 
-import java.util.ArrayList;
-
 public class Mamifero extends Animal {
 
 

@@ -6,8 +6,6 @@ import com.ALbersoft.Myzoo.Animales.Aves.Ave;
 import com.ALbersoft.Myzoo.Animales.Reptiles.Reptil;
 import com.ALbersoft.Myzoo.Animales.Mamiferos.Mamifero;
 
-import java.math.MathContext;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Animal extends Espacios {
@@ -25,6 +23,8 @@ public class Animal extends Espacios {
             "Luna", "Dio", "Jotaro"};
 
     public static Random ramd = new Random();
+    private static String[] sexos = { "Hembra", "Macho"};
+
     // Lita de Aves
     private static String[] TipoPa = { "garra", "palmímpeda"};
     private final static String[] TipoA = {"Alcón", "Condor", "Ágila", "Canario", "Cuervo"};
@@ -50,7 +50,7 @@ public class Animal extends Espacios {
     }
 
     protected static String sexo() {
-       return "macho";
+        return sexos[ramd.nextInt(sexos.length)];
     }
 
     public static String NombreRamdom(){

@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Espacios.CrearZoo(10, 9);
+        Espacios.CrearZoo(10, 10);
 
     }
 }
