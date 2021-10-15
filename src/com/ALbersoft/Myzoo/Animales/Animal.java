@@ -33,9 +33,9 @@ public class Animal extends Espacios {
     private final static String[] TipoR = {"Serpiente", "Tortuga", "Lagarto", "Dragón de comodo", "Cocodrilo"};
     private final static String[] ColorEscamas = {"Blanco", "Rojo", "Azul", "Amarillo", "Negro", "Verde", "Naranja"};
     // Lista de Mamíferos
+    private final static String[] TipoM = {"Leopardo", "Tigre", "Perro", "León", "Gato"};
     private final static String[] TipoDieta = {"Herbivoro", "Carnivoro", "Omnivoro"};
     private final static String[] TipoHabito = {"Diurno", "Nocturno"};
-
 
 
     public Animal(String nombre, int edad, String sexo) {
@@ -87,11 +87,8 @@ public class Animal extends Espacios {
         return ramd.nextInt(20);
     }
 
-
-
     /*  Valores mamíferos */
-
-
+    protected static String TipoMami(){return TipoM[ramd.nextInt(TipoM.length)];}
     protected static String Dieta(){
         return TipoDieta[ramd.nextInt(TipoDieta.length)];
     }
@@ -105,12 +102,10 @@ public class Animal extends Espacios {
         return ramd.nextInt(60);
     }
 
-
-
     public static void CrearAnim(int celdas, int animales) {
 
         for (int i = 0; i < animales; i ++){
-            Valor = ramd.nextInt(2);
+            Valor = ramd.nextInt(3);
 
 
             switch (Valor){
@@ -123,24 +118,14 @@ public class Animal extends Espacios {
                     System.out.println(Rept1.muestra());
                     break;
                 case 2:
-                    Mamifero Mami1 = new Mamifero(NombreRamdom(), edad(), sexo(), Peso(), Dieta(), Habito(), VelocidadDesplazamiento());
+                    Mamifero Mami1 = new Mamifero(NombreRamdom(), edad(), sexo(), Peso(), Dieta(), Habito(), VelocidadDesplazamiento(), TipoMami());
                     System.out.println(Mami1.muestra());
                     break;
             }
 
         }
 
-
-
-
-
-
-
-
-
-
     }
-
 
 }
 
